@@ -36,6 +36,10 @@ public class UserService implements IUserService {
         // Здесь необходимо реализовать перечисленные выше проверки
         //
 
+        if (user.getLogin().isEmpty() || user.getLogin() == null || user.getPassword().isEmpty() || user.getPassword() == null) {
+            throw new IllegalArgumentException("Ошибка в заполнении полей");
+        }
+
         // Если все проверки успешно пройдены, сохраняем пользователя в базу
         return userRepository.save(user);
     }
