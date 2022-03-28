@@ -26,6 +26,7 @@ public class AuthenticationService implements IAuthenticationService {
      *
      * @param user - пользователь проходящий авторизацию
      */
+
     @Override
     public User login(User user) throws UserNotFoundException, NotCorrectPasswordException {
         // Находим пользователя в базе
